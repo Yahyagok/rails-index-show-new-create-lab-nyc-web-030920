@@ -16,6 +16,12 @@ class CouponsController < ApplicationController
         redirect_to coupon_path(coupon) 
     end 
 
+    def destroy 
+        coupon = Coupon.find(params[:id])
+        coupon.destroy 
+        redirect_to coupons_path(coupon)
+    end 
+
     private 
 
     def coupon_params
